@@ -16,6 +16,7 @@ class GastronomiaModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
+    public $timestamps = false;
     protected $allowedFields    = ['nombre_restaurante','tipo_comida','tipo_cocina', 'capacidad', 'dirección', 'telefono', 'descripcion'];
 
     // Dates

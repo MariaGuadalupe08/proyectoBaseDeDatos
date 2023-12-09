@@ -32,6 +32,14 @@
                         <td><?=$users->website?></td>
                         <td><?=$users->status?></td>
 
+                        <td>
+                        <form action="{{ route('usersinfo.eliminar', ['id' => $users->userinfo_id]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta información?')">Eliminar</button>
+                        </form>
+                        </td>
+
                     </tr>
                     <?php endforeach ?>
                 </tbody>

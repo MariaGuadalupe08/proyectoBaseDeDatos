@@ -16,6 +16,7 @@ class UserInfoModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
+    public $timestamps = false;
     protected $allowedFields    = ['name','lastname','birthday', 'gender', 'phone', 'bio', 'website', 'status'];
 
     // Dates

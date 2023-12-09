@@ -16,6 +16,7 @@ class LugarModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
+    public $timestamps = false;
     protected $allowedFields    = ['nombre_lugar','descripcion','ubicacion', 'horario', 'costo_entrada'];
 
     // Dates

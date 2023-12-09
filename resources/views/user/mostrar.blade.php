@@ -26,6 +26,14 @@
                         <td><?=$user->profile?></td>
                         <td><?=$user->created_at?></td>
 
+                        <td>
+                        <form action="{{ route('users.eliminar', ['id' => $user->users_id]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
+                        </form>
+                        </td>
+
                     </tr>
                     <?php endforeach ?>
                 </tbody>

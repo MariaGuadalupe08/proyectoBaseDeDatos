@@ -26,6 +26,15 @@
                         <td><?=$gastronomia->telefono ?></td>
                         <td><?=$gastronomia->descripcion ?></td>
 
+                        <td>
+                        <form action="{{ route('gastronomias.eliminar', ['id' => $gastronomia->gastronomia_id]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta comida?')">Eliminar</button>
+                        </form>
+
+                        </td>
+
                     </tr>
                     <?php endforeach ?>
                 </tbody>

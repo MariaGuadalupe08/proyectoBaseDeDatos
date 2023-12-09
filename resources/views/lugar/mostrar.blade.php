@@ -22,6 +22,14 @@
                         <td><?=$lugar->descripcion ?></td>
                         <td><?=$lugar->ubicacion ?></td>
 
+                        <td>
+                        <form action="{{ route('lugares.eliminar', ['id' => $lugar->lugar_id]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este lugar?')">Eliminar</button>
+                        </form>
+                        </td>
+
                     </tr>
                     <?php endforeach ?>
                 </tbody>

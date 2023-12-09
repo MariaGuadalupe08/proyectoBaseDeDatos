@@ -4,41 +4,51 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserModel extends Model
 {
-    use HasFactory;
+    use SoftDeletes;
 
     protected $DBGroup          = 'default';
     protected $table            = 'users';
-    protected $primaryKey       = 'users_id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'object';
-    protected $useSoftDeletes   = true;
-    protected $protectFields    = false;
-    protected $allowedFields    = ['username','password','status', 'profile', 'created_at'];
+    protected $primaryKey = 'users_id';
+    protected $fillable = ['username', 'password', 'status', 'profile'];
+    protected $dates = ['deleted_at'];
 
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    // Relación con la tabla 'profile'
+    public function profile()
+    {
+        return $this->belongsTo(ProfileModel::class, 'profile', 'profile_id');
+    }
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+    // Relación con la tabla 'userinfo'
+    public function userInfo()
+    {
+        return $this->hasOne(UserInfo::class, 'users_id');
+    }
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    // Relación con la tabla 'Hoteles'
+    public function hotels()
+    {
+        return $this->hasMany(Hotel::class, 'users_id');
+    }
+
+    // Relación con la tabla 'Gastronomia'
+    public function gastronomy()
+    {
+        return $this->hasOne(Gastronomia::class, 'users_id');
+    }
+
+    // Relación con la tabla 'LugaresTuristicos'
+    public function touristicPlaces()
+    {
+        return $this->hasMany(LugaresTuristicos::class, 'users_id');
+    }
+
+    // Relación con la tabla 'Festividades'
+    public function festivities()
+    {
+        return $this->hasMany(Festividades::class, 'users_id');
+    }
 }

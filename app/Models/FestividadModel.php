@@ -14,9 +14,10 @@ class FestividadModel extends Model
     protected $primaryKey       = 'festividad_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
-    protected $useSoftDeletes   = true;
-    protected $protectFields    = false;
-    protected $allowedFields    = ['nombre_festividad','descripcion','precio','átracciones', 'fecha' ];
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    public $timestamps = false;
+    protected $allowedFields    = ['nombre_festividad','descripcion','precio','atracciones', 'fecha'];
 
     // Dates
     protected $useTimestamps = false;

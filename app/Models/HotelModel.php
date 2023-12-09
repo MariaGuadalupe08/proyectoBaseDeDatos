@@ -16,6 +16,7 @@ class HotelModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
+    public $timestamps = false;
     protected $allowedFields    = ['nombre_hotel','direccion','telefono', 'precio_hospedaje', 'descripcion', 'estrellas'];
 
     // Dates

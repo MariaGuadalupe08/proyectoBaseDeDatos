@@ -28,6 +28,14 @@
                         <td><?=$hotel->descripcion?></td>
                         <td><?=$hotel->estrellas?></td>
 
+                        <td>
+                        <form action="{{ route('hoteles.eliminar', ['id' => $hotel->hotel_id]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este hotel?')">Eliminar</button>
+                        </form>
+                        </td>
+
                     </tr>
                     <?php endforeach ?>
                 </tbody>
