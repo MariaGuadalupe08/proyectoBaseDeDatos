@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class HotelController extends Controller
 {
+
+    // FUNCIONES PARA CRUD'S
     public function index()
     {
 

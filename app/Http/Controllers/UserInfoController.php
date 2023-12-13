@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class UserInfoController extends Controller
 {
+
+    // FUNCIONES PARA CRUD'S
     public function index()
     {
 

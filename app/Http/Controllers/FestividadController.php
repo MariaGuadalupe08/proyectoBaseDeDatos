@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\DB;
 
 class FestividadController extends Controller
 {
+
+// FUNCIONES PARA CRUD'S
+
     public function index()
     {
 

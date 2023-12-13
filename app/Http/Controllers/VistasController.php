@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 class VistasController extends Controller
 {
 
+    // FUNCIONES PARA VISTAS DESDE BASE DE DATOS
+
     public function mostrarVista1()
     {
         //consulta la vista en la BD

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class LugarController extends Controller
 {
+
+    // FUNCIONES PARA CRUD'S
     public function index()
     {
         return view('lugarTuristico/lugarTuristico');

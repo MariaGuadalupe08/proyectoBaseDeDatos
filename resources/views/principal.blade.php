@@ -6,166 +6,115 @@
 
 <style>
     body {
-        padding-top: 56px;
+        padding-top: 20px;
     }
 
-    .navbar {
-        background-color: #007bff;
+    .nav-section {
+        background-color: #fafaca;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
     }
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-        color: #fff !important;
+    h1 {
+        color: #f98903;
+        font-size: 24px;
+        margin-bottom: 20px;
     }
 
-    .navbar-toggler-icon {
-        background-color: #fff;
+    .nav-link {
+        color: #1e7a1a;
+        font-weight: bold;
+        font-size: 18px;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
     }
 
-    .dropdown-menu {
-        background-color: #007bff;
-    }
-
-    .dropdown-item {
-        color: #fff !important;
-    }
-
-    .navbar-toggler {
-        border: 1px solid #fff;
+    .nav-link:hover {
+        color: #0056b3;
     }
 </style>
 
-<nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<div class="container">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Lugares Turíticos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/lugares/mostrar">Mostrar Lugares Turísticos</a></li>
-            <li><a class="dropdown-item" href="lugares/agregar">Transacción: Agregar Lugares</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Festividades
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/festividades/mostrar">Mostrar festividades</a></li>
-            <li><a class="dropdown-item" href="festividades/agregar">Transacción: Agregar festividad</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Gastronomia
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="comidas/mostrar">Mostrar Gastronomia</a></li>
-            <li><a class="dropdown-item" href="gastronomias/agregar">Agregar Comida</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Hoteles
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="hoteles/mostrar">Mostrar Hoteles</a></li>
-            <li><a class="dropdown-item" href="hoteles/agregar">Transacción: Agregar hotel</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Perfiles
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/perfiles/mostrar">Mostrar perfiles</a></li>
-            <li><a class="dropdown-item" href="perfiles/agregar">Transacción: Agregar perfil</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-         Usuarios
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/usuarios/mostrar">Mostrar usuarios</a></li>
-            <li><a class="dropdown-item" href="usuarios/agregar">Transacción: Agregar usuario</a></li>
-          </ul>
-        </li>
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-         Información de usuarios
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/informacion/mostrar">Mostrar información de usuario</a></li>
-            <li><a class="dropdown-item" href="usuariosinfo/agregar">Transacción: Agregar información</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-         Transacciones desde laravel
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/hoteles-transaccion1">Transacción 1:Agrega</a></li>
-            <li><a class="dropdown-item" href="/actualizarhotel">Transacción 2:Actualiza</a></li>
-            <li><a class="dropdown-item" href="/eliminar-hotel/{hotelId}">Transacción 3: Elimina</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Vistas de BD a Laravel
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/mostrarVista1">VISTA 1</a></li>
-            <li><a class="dropdown-item" href="/mostrarVista2">VISTA 2</a></li>
-            <li><a class="dropdown-item" href="/mostrarVista3">VISTA 3</a></li>
-            <li><a class="dropdown-item" href="/mostrarVista4">VISTA 4</a></li>
-            <li><a class="dropdown-item" href="/mostrarVista5">VISTA 5</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Consultas de BD a Laravel
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/mostrarConsulta1">CONSULTA 1</a></li>
-            <li><a class="dropdown-item" href="/mostrarConsulta2">CONSULTA 2</a></li>
-            <li><a class="dropdown-item" href="/mostrarConsulta3">CONSULTA 3</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Respaldo de Base
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/restaurar">CONSULTA 1</a></li>
-          </ul>
-        </li>
-
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
+    <div class="nav-section">
+        <h1>VISUALIZAR BASE DE DATOS COMPLETA</h1>
+        <a href="/BaseDeDatosCompleta" class="nav-link">Visualizar Base de Datos</a>
     </div>
-</nav>
+
+    <div class="nav-section">
+        <h1>Lugares Turísticos</h1>
+        <a href="/lugares/mostrar" class="nav-link">Mostrar Lugares Turísticos</a>
+        <a href="lugares/agregar" class="nav-link">Agregar Lugares turíticos</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>Festividades en Teziutlán</h1>
+        <a href="/festividades/mostrar" class="nav-link">Mostrar Festividades</a>
+        <a href="festividades/agregar" class="nav-link">Agregar festividades</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>Gastronomía en Teziutlán</h1>
+        <a href="comidas/mostrar" class="nav-link">Mostrar gastronomía</a>
+        <a href="gastronomias/agregar" class="nav-link">Agregar nueva comida</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>Hoteles en Teziutlán</h1>
+        <a href="hoteles/mostrar" class="nav-link">Mostrar Hoteles</a>
+        <a href="hoteles/agregar" class="nav-link">Agregar hotel nuevo</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>Perfiles</h1>
+        <a href="/perfiles/mostrar" class="nav-link">Mostrar perfiles</a>
+        <a href="perfiles/agregar" class="nav-link">Agregar perfiles</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>Usuarios</h1>
+        <a href="/usuarios/mostrar" class="nav-link">Mostrar usuarios</a>
+        <a href="usuarios/agregar" class="nav-link">Agregar usuario nuevo</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>Información de Usuarios</h1>
+        <a href="/informacion/mostrar" class="nav-link">Mostrar información de usuarios</a>
+        <a href="usuariosinfo/agregar" class="nav-link">Agregar informacion de usuarios</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>Transacciones desde Laravel</h1>
+        <a href="/hoteles-transaccion1" class="nav-link">Transacción: Agregar nuevo hotel</a>
+        <a href="/actualizarhotel" class="nav-link">Transacción: Actualizar hotel</a>
+        <a href="/eliminar-hotel/{hotelId}" class="nav-link">Transacción: Eliminar hotel</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>VISTAS DE BD EN LARAVEL</h1>
+        <a href="/mostrarVista1" class="nav-link">VISTA 1</a>
+        <a href="/mostrarVista2" class="nav-link">VISTA 2</a>
+        <a href="/mostrarVista3" class="nav-link">VISTA 3</a>
+        <a href="/mostrarVista4" class="nav-link">VISTA 4</a>
+        <a href="/mostrarVista5" class="nav-link">VISTA 5</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>CONSULTAS DE BD EN LARAVEL</h1>
+        <a href="/mostrarConsulta1" class="nav-link">CONSULTA 1</a>
+        <a href="/mostrarConsulta2" class="nav-link">CONSULTA 2</a>
+        <a href="/mostrarConsulta3" class="nav-link">CONSULTA 3</a>
+    </div>
+
+    <div class="nav-section">
+        <h1>RESPALDO DE BD</h1>
+        <a href="/restaurar" class="nav-link">DA CLICK PARA HACER UN RESPALDO</a>
+    </div>
+
+
+</div>

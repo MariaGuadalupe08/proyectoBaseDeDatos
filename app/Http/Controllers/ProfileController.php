@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
+
+    // FUNCIONES PARA CRUD'S
     public function index()
     {
 

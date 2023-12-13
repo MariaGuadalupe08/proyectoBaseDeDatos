@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BaseDeDatosController;
 use App\Http\Controllers\FestividadController;
 use App\Http\Controllers\PrincipalController;
 use Illuminate\Support\Facades\Route;
@@ -93,6 +94,9 @@ Route::get('/mostrarVista5', 'App\Http\Controllers\VistasController@mostrarVista
 Route::get('/mostrarConsulta1', 'App\Http\Controllers\ConsultasController@mostrarUsuariosConPerfiles');
 Route::get('/mostrarConsulta2', 'App\Http\Controllers\ConsultasController@mostrarHotelesConAdmin');
 Route::get('/mostrarConsulta3', 'App\Http\Controllers\ConsultasController@mostrarLugaresConAdmin');
+
+//VISTA DE BASE DE DATOS
+Route::get('/BaseDeDatosCompleta', [BaseDeDatosController::class, 'InfoDataBase']);
 
 
 Route::get('/user-profiles', 'App\Http\Controllers\UserController@getUserProfiles');
